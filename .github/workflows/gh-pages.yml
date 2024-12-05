@@ -26,11 +26,11 @@ jobs:
         run: |
           cd source
           for i in *.tex; do
-              make4ht $i
+              htlatex $i
               latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf $i
           done
           cd ..
-          make4ht index.tex
+          htlatex index.tex
 
       - name: Set up git
         run: |
